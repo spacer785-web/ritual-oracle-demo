@@ -1,16 +1,14 @@
 # Ritual Oracle Demo
 
-This is a demo project built on the **Ritual** protocol.
+This is a demo project based on Ritual Oracle.
 
-## Overview
+## Backend
+- Flask app responding to `/infer`
 
-- Backend: Flask server providing AI-based oracle responses.
-- Frontend: Simple HTML page to query the oracle.
-- Environment variables: `.env` file (DO NOT include your real OpenAI key in public repo).
+## Frontend
+- Simple HTML interface to query the backend
 
-## Usage
-
-1. Install dependencies:
-```bash
-cd backend
-pip install -r requirements.txt
+## How to Run
+1. Set your OpenAI API key in `.env`
+2. Run `python3 backend/app.py`
+3. Access the frontend via browser
