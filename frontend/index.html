@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ritual Oracle Demo</title>
+</head>
+<body>
+    <h1>Ritual Oracle</h1>
+    <input type="text" id="query" placeholder="Ask a question"/>
+    <button onclick="askOracle()">Ask</button>
+    <pre id="response"></pre>
+
+    <script>
+        async function askOracle() {
+            const query = document.getElementById("query").value;
+            const res = await fetch("http://localhost:8080/infer", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({query})
+            });
+            const data = await res.json();
+            document.getElementById("response").textContent = data.result;
+        }
+    </script>
+</body>
+</html>
